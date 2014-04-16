@@ -27,9 +27,11 @@ namespace frmRef01
 
             this.Load += new EventHandler(Form1_Load);
 
-            strTmp = String.Empty;
-            lstString = new List<string>();
-
+            // strTmp = String.Empty;
+            sbTmp = new StringBuilder();
+            // change string to stringbulider
+            // lstString = new List<string>();
+            lstStringBuilder = new List<StringBuilder>();
             return;
         }
 
@@ -38,22 +40,25 @@ namespace frmRef01
             int i = 0, n = 10;
             for (i = 0; i < n; i++)
             {
-                lstString.Add(i.ToString());
+                lstStringBuilder.Add(new StringBuilder(i.ToString()));
             }
 
-            strTmp = lstString[5];
+            sbTmp = lstStringBuilder[5];
 
             return;
         }
 
         #region "Private member variables"
-        private string strTmp;
-        private List<string> lstString;
+        // change string to stringbulider
+        // private string strTmp;
+        private StringBuilder sbTmp;
+        // private List<string> lstString;
+        private List<StringBuilder> lstStringBuilder;
         #endregion
 
         private void btnAddOneToStrTmp_Click(object sender, EventArgs e)
         {
-            strTmp = "Add One";
+            sbTmp.Append("Add One");
 
             return;
         }

@@ -20,6 +20,9 @@ namespace frmRef04
     /// modify str1, and str2 will also not be modified.
     /// 
     /// Now let's try using StringBuilder, see what happens.
+    /// StringBuilder is like a classic reference type, after
+    /// sb1 = sb2, sb1 and sb2 is like the same thing, and the values sb1 
+    /// originally holds can not be accessed, will be disposed
     /// </summary>
     public partial class Form1 : Form
     {
