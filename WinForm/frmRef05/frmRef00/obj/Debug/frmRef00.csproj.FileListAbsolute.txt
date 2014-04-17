@@ -1,0 +1,16 @@
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\bin\Debug\frmRef00.exe
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\bin\Debug\frmRef00.pdb
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\frmRef00.Form1.resources
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\frmRef00.Properties.Resources.resources
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\frmRef00.csproj.GenerateResource.Cache
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\frmRef00.exe
+C:\Users\support\Documents\git_src\WinForm\frmRef00\frmRef00\obj\Debug\frmRef00.pdb
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\frmRef00.exe
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\frmRef00.pdb
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\frmRef00.Form1.resources
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\frmRef00.Properties.Resources.resources
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\obj\Debug\frmRef00.csproj.GenerateResource.Cache
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\bin\Debug\frmRef00.exe
+C:\Users\support\Documents\git_src\WinForm\frmRef05\frmRef00\bin\Debug\frmRef00.pdb

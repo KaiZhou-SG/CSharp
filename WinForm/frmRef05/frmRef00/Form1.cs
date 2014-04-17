@@ -39,8 +39,8 @@ namespace frmRef00
             this.Load += new EventHandler(Form1_Load);
             this.bdsStrList.CurrentChanged += new EventHandler(bdsStrList_CurrentChanged);
 
-            lstString = new List<string>();
-            strCurrent = String.Empty;
+            lstStringBuilders = new List<StringBuilder>();
+            sbCurrent = new StringBuilder();
 
             return;
         }
@@ -58,12 +58,12 @@ namespace frmRef00
             int i = 0, j = 10;
             for (i = 0; i < j; i++)
             {
-                lstString.Add(i.ToString());
+                lstStringBuilders.Add(new StringBuilder(i.ToString()));
             }
 
-            bdsStrList.DataSource = lstString;
+            bdsStrList.DataSource = lstStringBuilders;
             lbStrList.DataSource = bdsStrList;
-            strCurrent = (string)bdsStrList.Current;
+            sbCurrent = (StringBuilder)bdsStrList.Current;
 
             return;
         }
@@ -77,8 +77,8 @@ namespace frmRef00
         ///strCurrent serves as the current string:
         ///ctrCurrent = bdsStrList.current;
         ///</remarks>
-        private List<string> lstString;
-        private string strCurrent;
+        private List<StringBuilder> lstStringBuilders;
+        private StringBuilder sbCurrent;
 
         #endregion
 
@@ -91,9 +91,11 @@ namespace frmRef00
         {
             int current = 0;
 
-            if (Int32.TryParse(strCurrent, out current))
+            if (Int32.TryParse(sbCurrent.ToString(), out current))
             {
-                strCurrent = (current + 1).ToString();
+                sbCurrent.Remove(0, sbCurrent.Length);
+                sbCurrent.Append((current + 1).ToString());
+                bdsStrList.ResetBindings(false);
             }
             else
             {
@@ -111,7 +113,7 @@ namespace frmRef00
         /// <param name="e">Event argument</param>
         private void bdsStrList_CurrentChanged(object sender, EventArgs e)
         {
-            strCurrent = (string)bdsStrList.Current;
+            sbCurrent = (StringBuilder)bdsStrList.Current;
 
             return;
         }
