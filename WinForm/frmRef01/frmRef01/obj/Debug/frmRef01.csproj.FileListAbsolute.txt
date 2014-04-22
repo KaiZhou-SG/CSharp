@@ -1,8 +1,0 @@
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\bin\Debug\frmRef01.exe
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\bin\Debug\frmRef01.pdb
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\frmRef01.Form1.resources
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\frmRef01.Properties.Resources.resources
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\frmRef01.csproj.GenerateResource.Cache
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\frmRef01.exe
-C:\Users\support\Documents\git_src\WinForm\frmRef01\frmRef01\obj\Debug\frmRef01.pdb
