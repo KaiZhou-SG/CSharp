@@ -15,16 +15,9 @@ namespace frmRef00
     /// <summary>
     /// Author: Zhou Kai 
     /// Date: 2014-04-17 
-    /// Replace all the String to StringBuilder to test again
-    /// 
-    /// Date: 2014-04-16
-    /// 
-    /// The frmRef00 project is going to test the binding_source and reference feature:
-    /// (1) Assign a string list strList to a binding source bdsStrList
-    /// (2) Assign the bdsStrList to a Listbox lbStrList
-    /// (3) Define a string variable: strCurrent
-    /// (4) strCurrent = bdsStrList.current
-    /// (5) To test: if strCurrent is changed, if the strList will also update(The result is no)
+    /// Replace all the String to StringBuilder to test again.
+    /// The codes are the same with the project frmRef00, only
+    /// replaces String type to StringBuilder type
     /// </summary>
     public partial class Form1 : Form
     {

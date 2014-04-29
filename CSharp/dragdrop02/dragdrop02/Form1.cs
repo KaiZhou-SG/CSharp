@@ -85,7 +85,7 @@ namespace DragDrop02
         // source_control.DoDragDrop()
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            listBox1.DoDragDrop(listBox1.SelectedValue.ToString(), DragDropEffects.Copy);
+            listBox1.DoDragDrop(listBox1.SelectedValue.ToString(), DragDropEffects.Copy); // effect is Copy here
         }
 
         // target_control.dragEnter()
@@ -95,7 +95,11 @@ namespace DragDrop02
             {
                 // If I comment out the line below,
                 // the drag-drop will not work.
-                e.Effect = DragDropEffects.Copy;
+                // Another thing to notice is that:
+                // The DragDropEffects in DoDragDrop() should 
+                // be the same with that of the DragEnter() method, 
+                // otherwise, cannot drag-drop is not allowed.
+                e.Effect = DragDropEffects.Copy; // should be Copy
             }
         }
 

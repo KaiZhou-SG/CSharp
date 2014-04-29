@@ -10,6 +10,16 @@ using System.Windows.Forms;
 namespace frmRef01
 {
     /// <summary>
+    /// 2014-04-23 Zhou Kai updates the summary:
+    /// No, the lstString[i] will not change as strTmp changes,
+    /// but if the list is a list of StringBuilder and strTmp is
+    /// a StringBuilder object, then the answer is Yes.
+    /// String is a special reference type, it acts like a 
+    /// value type:
+    /// (1) can use == to compare its contents rather its reference address
+    /// (2) stringA = stringB only makes value queal rather reference to a same address
+    /// (3) stringA = "abc" creates a new string object
+    /// 
     /// This program is going to test the a feature of reference:
     /// 1. Define a List of string: lstString
     /// 2. Define a string strTmp

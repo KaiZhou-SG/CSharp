@@ -15,7 +15,8 @@ namespace frmRef00
     /// <summary>
     /// Author: Zhou Kai 
     /// Date: 2014-04-17 
-    /// Replace all the String to StringBuilder to test again
+    /// Refer to another sample, which replaces String with StringBuilder,
+    /// the result then is Yes.
     /// 
     /// Date: 2014-04-16
     /// 
