@@ -1,6 +1,4 @@
-﻿param([string] $pathNewProgram, [string[]] $newPgmNames)
-$matched
-
+﻿$matched
 $pathNewProgram = Read-Host 'please provide the path for the new programs'
 
 Function getAllNamesOfNewPrograms($pathNewProgram)
@@ -10,7 +8,7 @@ Function getAllNamesOfNewPrograms($pathNewProgram)
 
 Function lookForExistingPrograms([string[]] $newPgmNames)
 {
-  '1 new programs are: ' + $newPgmNames
+  $tmp = '1 new programs are: ' + $newPgmNames
   if ($newPgmNames.Count -eq 0)
   {
     $matched = $false
@@ -19,11 +17,11 @@ Function lookForExistingPrograms([string[]] $newPgmNames)
 
   foreach ($name in $newPgmNames)
   {
-    'I am in the look to match'
+    $tmp = 'I am in the look to match'
     if (!(Test-Path .\$name))
     {
       $bMatch = $false
-      $name + ' not found in current folder'
+      $tmp = $name + ' not found in current folder' #tmp is used to absorb unnecessary outputs
       $matched = $false
       return $matched
     }
