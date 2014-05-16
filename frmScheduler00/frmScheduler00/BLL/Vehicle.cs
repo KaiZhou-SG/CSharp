@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using frmScheduler00.DAL;
 
 namespace frmScheduler00.BLL
 {
@@ -11,17 +12,17 @@ namespace frmScheduler00.BLL
     public class Vehicle
     {
         #region "Properties"
-        public int ID { get; set; }
-        public int VehicleType { get; set; }
-        public decimal MaxLoad { get; set; }
-        public bool IsAvailable { get; set; }
+        internal int ID { get; set; }
+        internal int VehicleType { get; set; }
+        internal decimal MaxLoad { get; set; }
+        internal bool IsAvailable { get; set; }
         #endregion
 
         #region "Constructors"
         /// <summary>
         /// The default constructor
         /// </summary>
-        public Vehicle()
+        internal Vehicle()
         {
             this.ID = 0;
             this.VehicleType = 0;
@@ -36,7 +37,7 @@ namespace frmScheduler00.BLL
         /// <param name="name">driver name</param>
         /// <param name="isAvailable">driver availability</param>
         /// <param name="defaultVehicleID">the id of the driver's default vehicle</param>
-        public Vehicle(int id, int vehicleType, decimal maxLoad, bool isAvailable)
+        internal Vehicle(int id, int vehicleType, decimal maxLoad, bool isAvailable)
         {
             this.ID = 0;
             this.VehicleType = vehicleType;
@@ -52,7 +53,7 @@ namespace frmScheduler00.BLL
         /// <returns>All the vehicles.</returns>
         public static List<Vehicle> GetAllVehicles()
         {
-            return Vehicle.GetAllVehicles();
+            return VehicleDAL.GetAllVehicles();
         }
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace frmScheduler00.BLL
         /// </summary>
         /// <param name="driverId">The driver ID</param>
         /// <returns>The driver with id = driverId</returns>
-        public static Driver GetVehicle(int VehicleID)
+        public static Vehicle GetVehicle(int VehicleID)
         {
             return VehicleDAL.GetVehicle(VehicleID);
         }
@@ -69,7 +70,7 @@ namespace frmScheduler00.BLL
         /// Set driver with id = driverID to available.
         /// </summary>
         /// <param name="driverID">the provided driver id</param>
-        public static void SetDriverToAvaliable(int driverID)
+        public static void SetDriverToAvaliable(int VehicleID)
         {
             VehicleDAL.SetVehicleToAvaliable(VehicleID);
         }
@@ -86,7 +87,7 @@ namespace frmScheduler00.BLL
         /// Set driver with id = driverID to un-available.
         /// </summary>
         /// <param name="driverID">the provided driver id</param>
-        public static void SetDriverToUnAvaliable(int driverID)
+        public static void SetVehicleToUnAvaliable(int VehicleID)
         {
             VehicleDAL.SetVehicleToUnAvaliable(VehicleID);
         }
@@ -97,6 +98,26 @@ namespace frmScheduler00.BLL
         public void SetVehicleToUnAvaliable()
         {
             VehicleDAL.SetVehicleToUnAvaliable(this.ID);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="VehicleID"></param>
+        /// <param name="date"></param>
+        public static void SetVehicleToAvaliableOnGivenDate(int VehicleID, DateTime date)
+        {
+            VehicleDAL.SetVehicleToAvaliableOnGivenDate(VehicleID, date);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="VehicleID"></param>
+        /// <param name="date"></param>
+        public static void SetVehicleToUnAvaliableOnGivenDate(int VehicleID, DateTime date)
+        {
+            VehicleDAL.SetVehicleToUnAvaliableOnGivenDate(VehicleID, date);
         }
         #endregion
     }

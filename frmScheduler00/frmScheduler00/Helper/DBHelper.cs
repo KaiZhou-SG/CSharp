@@ -8,15 +8,15 @@ namespace frmScheduler00.Helper
     /// <summary>
     /// 
     /// </summary>
-    public static class DBHelper
+    internal static class DBHelper
     {
-        public static string dbConnectionString = "Server = 127.0.0.1//SQL2012; Database = Resources; Trusted_Connection = True";
+        internal static string dbConnectionString = "Server = ZHOUKAI\\SQL2012; Database = Resources; Trusted_Connection = True";
 
-        public static string getDbConnectionString()
+        internal static string getDbConnectionString()
         {
             if (String.IsNullOrEmpty(dbConnectionString))
             {
-                return "Server = 127.0.0.1//SQL2012; Database = Resources; Trusted_Connection = True";
+                return "Server = ZHOUKAI\\SQL2012; Database = Resources; Trusted_Connection = True";
             }
             else
             {

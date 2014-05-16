@@ -11,9 +11,9 @@ namespace frmScheduler00.DAL
     /// <summary>
     /// The data access layer of the Vehicle class.
     /// </summary>
-    public class VehicleDAL
+    internal class VehicleDAL
     {
-        public static List<Vehi> GetAllDrivers()
+        internal static List<Vehicle> GetAllVehicles()
         {
             List<Vehicle> lstVehicle = new List<Vehicle>();
             string strDBConnection = Helper.DBHelper.getDbConnectionString();
@@ -47,7 +47,7 @@ namespace frmScheduler00.DAL
         /// <param name="dbRdr">From the SqlDataReader</param>
         /// <returns>Returns the driver object from IDataReader</returns>
         /// <exception cref="InvalidCastException">InvalidCastException may be thrown</exception>
-        public static Vehicle GetVehicle(IDataReader dbRdr)
+        internal static Vehicle GetVehicle(IDataReader dbRdr)
         {
             Vehicle tmp;
             try
@@ -63,7 +63,7 @@ namespace frmScheduler00.DAL
             return tmp;
         }
 
-        public static Vehicle GetVehicle(int driverId)
+        internal static Vehicle GetVehicle(int driverId)
         {
             Vehicle tmp = new Vehicle();
             string strDBConnection = Helper.DBHelper.getDbConnectionString();
@@ -98,11 +98,11 @@ namespace frmScheduler00.DAL
             return tmp;
         }
 
-        public static void SetVehicleToAvaliable(int driverID)
+        internal static void SetVehicleToAvaliable(int VehicleID)
         {
             string strDBConnection = Helper.DBHelper.getDbConnectionString();
-            string sqlQuery = "UPDATE dbo.Driver SET IsAvailable = 1 WHERE ID = {0}";
-            sqlQuery = String.Format(sqlQuery, driverID);
+            string sqlQuery = "UPDATE dbo.Vehicle SET IsAvailable = 1 WHERE ID = {0}";
+            sqlQuery = String.Format(sqlQuery, VehicleID);
             SqlConnection dbCon = new SqlConnection(strDBConnection);
             SqlCommand dbCmd = new SqlCommand();
             SqlTransaction dbTran;
@@ -130,11 +130,11 @@ namespace frmScheduler00.DAL
             finally { dbCon.Close(); }
         }
 
-        public static void SetDriverToUnAvaliable(int driverID)
+        internal static void SetVehicleToUnAvaliable(int VehicleID)
         {
             string strDBConnection = Helper.DBHelper.getDbConnectionString();
-            string sqlQuery = "UPDATE dbo.Driver SET IsAvailable = 0 WHERE ID = {0}";
-            sqlQuery = String.Format(sqlQuery, driverID);
+            string sqlQuery = "UPDATE dbo.Vehicle SET IsAvailable = 0 WHERE ID = {0}";
+            sqlQuery = String.Format(sqlQuery, VehicleID);
             SqlConnection dbCon = new SqlConnection(strDBConnection);
             SqlCommand dbCmd = new SqlCommand();
             SqlTransaction dbTran;
@@ -155,6 +155,102 @@ namespace frmScheduler00.DAL
                 {
                     dbTran.Rollback();
                     throw new Exception("Expect to update one driver, but more drivers are updated.");
+                }
+            }
+            catch (SqlException se) { throw se; }
+            catch (Exception e) { throw e; }
+            finally { dbCon.Close(); }
+        }
+
+        internal static void SetVehicleToAvaliableOnGivenDate(int VehicleID, DateTime date)
+        {
+            string strDBConnection = Helper.DBHelper.getDbConnectionString();
+            string strDate = date.ToString("yyyy-MM-dd HH:mm:ss");
+            string sqlQuery = "SELECT COUNT (PlanDate) FROM dbo.VehicleAvailability " +
+                "WHERE VehicleID = {0} AND PlanDate = '{1}'";
+            sqlQuery = String.Format(sqlQuery, VehicleID, strDate);
+            SqlConnection dbCon = new SqlConnection(strDBConnection);
+            SqlCommand dbCmd = new SqlCommand();
+            SqlTransaction dbTran;
+
+            try
+            {
+                if (dbCon.State == ConnectionState.Closed) { dbCon.Open(); }
+                dbCmd.Connection = dbCon;
+                dbCmd.CommandType = CommandType.Text;
+                dbCmd.CommandText = sqlQuery;
+                int count = Convert.ToInt32(dbCmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    sqlQuery = "UPDATE dbo.VehicleAvailability SET VehicleAvailable = 1";
+                    dbCmd.CommandType = CommandType.Text;
+                    dbCmd.CommandText = sqlQuery;
+                    dbTran = dbCon.BeginTransaction();
+                    dbCmd.Transaction = dbTran;
+                    if (Convert.ToInt32(dbCmd.ExecuteNonQuery()) != 1)
+                    {
+                        dbTran.Rollback();
+                        throw new Exception("Expect to update one vehicle, but zero or more vehicles are updated.");
+                    }
+                }
+                else
+                {
+                    sqlQuery = "INSERT INTO dbo.VehicleAvailability VALUES (" +
+                        "'{0}', {1}, {2})";
+                    sqlQuery = String.Format(sqlQuery, date, VehicleID, 1);
+                    dbCmd.CommandType = CommandType.Text;
+                    dbCmd.CommandText = sqlQuery;
+                    dbTran = dbCon.BeginTransaction();
+                    dbCmd.Transaction = dbTran;
+                    dbCmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException se) { throw se; }
+            catch (Exception e) { throw e; }
+            finally { dbCon.Close(); }
+        }
+
+        internal static void SetVehicleToUnAvaliableOnGivenDate(int VehicleID, DateTime date)
+        {
+            string strDBConnection = Helper.DBHelper.getDbConnectionString();
+            string strDate = date.ToString("yyyy-MM-dd HH:mm:ss");
+            string sqlQuery = "SELECT COUNT (PlanDate) FROM dbo.VehicleAvailability " +
+                "WHERE VehicleID = {0} AND PlanDate = '{1}'";
+            sqlQuery = String.Format(sqlQuery, VehicleID, strDate);
+            SqlConnection dbCon = new SqlConnection(strDBConnection);
+            SqlCommand dbCmd = new SqlCommand();
+            SqlTransaction dbTran;
+
+            try
+            {
+                if (dbCon.State == ConnectionState.Closed) { dbCon.Open(); }
+                dbCmd.Connection = dbCon;
+                dbCmd.CommandType = CommandType.Text;
+                dbCmd.CommandText = sqlQuery;
+                int count = Convert.ToInt32(dbCmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    sqlQuery = "UPDATE dbo.VehicleAvailability SET VehicleAvailable = 0";
+                    dbCmd.CommandType = CommandType.Text;
+                    dbCmd.CommandText = sqlQuery;
+                    dbTran = dbCon.BeginTransaction();
+                    dbCmd.Transaction = dbTran;
+                    if (Convert.ToInt32(dbCmd.ExecuteNonQuery()) != 1)
+                    {
+                        dbTran.Rollback();
+                        throw new Exception("Expect to update one vehicle, but zero or more vehicles are updated.");
+                    }
+                }
+                else
+                {
+                    sqlQuery = "INSERT INTO dbo.VehicleAvailability VALUES (" +
+                        "'{0}', {1}, {2})";
+                    sqlQuery = String.Format(sqlQuery, date, VehicleID, 0);
+                    dbCmd.CommandType = CommandType.Text;
+                    dbCmd.CommandText = sqlQuery;
+                    dbTran = dbCon.BeginTransaction();
+                    dbCmd.Transaction = dbTran;
+                    dbCmd.ExecuteNonQuery();
                 }
             }
             catch (SqlException se) { throw se; }

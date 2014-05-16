@@ -16,6 +16,7 @@ namespace frmScheduler00.BLL
         public string Name { get; set; }
         public bool IsAvailable { get; set; }
         public int DefaultVehicleID { get; set; }
+        public string StrIsAvailable { get { return IsAvailable.ToString(); } }
         #endregion
 
         #region "Constructors"
@@ -39,7 +40,7 @@ namespace frmScheduler00.BLL
         /// <param name="defaultVehicleID">the id of the driver's default vehicle</param>
         public Driver(int id, string name, bool isAvailable, int defaultVehicleID)
         {
-            this.ID = 0;
+            this.ID = id;
             this.Name = name;
             this.IsAvailable = isAvailable;
             this.DefaultVehicleID = defaultVehicleID;
@@ -98,6 +99,26 @@ namespace frmScheduler00.BLL
         public void SetDriverToUnAvaliable()
         {
             DriverDAL.SetDriverToUnAvaliable(this.ID);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="DriverID"></param>
+        /// <param name="date"></param>
+        public static void SetDriverToAvaliableOnGivenDate(int DriverID, DateTime date)
+        {
+            DriverDAL.SetDriverToAvaliableOnGivenDate(DriverID, date);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="DriverID"></param>
+        /// <param name="date"></param>
+        public static void SetDriverToUnAvaliableOnGivenDate(int DriverID, DateTime date)
+        {
+            DriverDAL.SetDriverToUnAvaliableOnGivenDate(DriverID, date);
         }
         #endregion
     }
