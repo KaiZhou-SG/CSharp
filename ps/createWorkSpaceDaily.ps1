@@ -35,10 +35,10 @@ else
 # Create a ToDo.txt with default values, under the current workSpace
 # Notice that in Powershell, `n means new-line in a string,
 # but when writing to a txt file, `r`n is to change to a new-line
-if (Test-Path $workSpaceFullName + "\ToDo.txt")
+if (Test-Path ($workSpaceFullName + "\ToDos.txt"))
 {
   "**************************************************************"
-          $workSpaceFullName + "\ToDo.txt is already created."
+          $workSpaceFullName + "\ToDos.txt is already created."
   "**************************************************************"
 }
 else
