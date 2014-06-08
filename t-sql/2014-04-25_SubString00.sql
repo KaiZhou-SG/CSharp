@@ -1,0 +1,4 @@
+DECLARE @Str1 varchar(10)
+SELECT @Str1 = '1'
+
+SELECT SUBSTRING(@Str1, 0, 1)

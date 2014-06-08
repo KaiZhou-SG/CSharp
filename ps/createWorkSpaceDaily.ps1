@@ -35,14 +35,23 @@ else
 # Create a ToDo.txt with default values, under the current workSpace
 # Notice that in Powershell, `n means new-line in a string,
 # but when writing to a txt file, `r`n is to change to a new-line
-$default_value = "1. Get the latest codes from TC `r`n2. make sure the codes can compile"
-New-Item -Path $workSpaceFullName -ItemType "file" -Name "ToDos.txt" -Value $default_value
-$default_value
+if (Test-Path ($workSpaceFullName + "\ToDos.txt"))
+{
+  "**************************************************************"
+          $workSpaceFullName + "\ToDos.txt is already created."
+  "**************************************************************"
+}
+else
+{
+    $default_value = "1. Get the latest codes from TC `r`n2. Make sure the codes can compile"
+    New-Item -Path $workSpaceFullName -ItemType "file" -Name "ToDos.txt" -Value $default_value
+}
 
 # Pop up the workspace 
 Explorer.exe $workSpaceFullName
-Explorer.exe D:\eBooks
+#Explorer.exe D:\eBooks
+#Open the home directory
+Explorer.exe ~
 Explorer.exe C:\FreightMaster80\
 # execute firefox internet browser.
-# Start "C:\Program Files (x86)\Mozilla Firefox\Firefox.exe"
-
+Start "C:\Program Files (x86)\Mozilla Firefox\Firefox.exe"
