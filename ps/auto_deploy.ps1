@@ -82,8 +82,6 @@ Function lookForExistingPrograms([string[]] $newPgmNames)
   return $matched
 }
 
-
-
 Function getNewFileNameFromLatestBkUpFileName
 {
   param([string] $latestBkUpProgramName,  [string] $programRealName, [string] $newProgramName)
@@ -95,7 +93,6 @@ Function getNewFileNameFromLatestBkUpFileName
   $seqName = $latestBkUpProgramName.Substring($lenRealName, $latestBkUpProgramName.Length - $lenRealName - $lenExtension - 1)
   
   $realName + ([int]$seqName + 1).ToString() + '.' + $formatName # the return value
-  
 }
 
 Function bkUpExistingPrograms
