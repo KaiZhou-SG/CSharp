@@ -1,4 +1,7 @@
 <#
+2014-07-05 Zhou Kai
+Adds some useful variables: $dirFMCompiledCodes, $dirWorkLog, $dirGitDoc
+
 Create a workspace(a folder) every day when turning the PC on.
 The workspace name relies on the date. For example,
 if it's 2013-09-19 today, then the workspace name is "2013-09-19" .
@@ -55,3 +58,8 @@ Explorer.exe ~
 Explorer.exe C:\FreightMaster80\
 # execute firefox internet browser.
 Start "C:\Program Files (x86)\Mozilla Firefox\Firefox.exe"
+
+# Adds some useful variables: $dirFMCompiledCodes, $dirWorkLog
+$dirFMCompiledCodes = 'C:\FreightMaster80\Standard\Transport85\CompiledCode'
+$dirWorkLog = 'd:\workLog'
+$dirGitDoc = 'C:\Users\support\Documents\doc\'

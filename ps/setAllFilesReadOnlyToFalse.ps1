@@ -1,6 +1,6 @@
 ﻿<# 
  2014-06-29 Zhou Kai writes this script to
- set all the sub-directories and their files' ReadOnly property
+ set all the sub-directories and their files' 'IsReadOnly' property
  to fasle under the same directory of this script.
 
  Design:
