@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Hello, World(from the view)!
+        <!--I then use the ViewBag object from the Index() action of Home controller-->
+        @ViewBag.Greeting
+        <!--The Greeting property will be translated by the Razor rending engine-->
+        <!--There's no conventions on the property name of the ViewBag object
+            as long as we use the same name between the controller side and
+            the view side. You can also define multiple properties to the
+            ViewBag object.
+            -->
+        <p>@ViewBag.Special</p>
+    </div>
+</body>
+</html>

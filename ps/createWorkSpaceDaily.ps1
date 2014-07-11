@@ -60,6 +60,7 @@ Explorer.exe C:\FreightMaster80\
 Start "C:\Program Files (x86)\Mozilla Firefox\Firefox.exe"
 
 # Adds some useful variables: $dirFMCompiledCodes, $dirWorkLog
+Start "Powershell"
 $dirFMCompiledCodes = 'C:\FreightMaster80\Standard\Transport85\CompiledCode'
 $dirWorkLog = 'd:\workLog'
 $dirGitDoc = 'C:\Users\support\Documents\doc\'
