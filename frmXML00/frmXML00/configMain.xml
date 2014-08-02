@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Datagridview1_Config>
+    <Company>
+      <CompanyName>WYN2K</CompanyName>
+      <User>
+        <UserName>Nicolas</UserName>
+        <Index>1,2,3,4,5</Index>
+      </User>
+      <User>
+        <UserName>Wiki</UserName>
+        <Index>5,4,3,2,1</Index>
+      </User>
+      <User>
+        <UserName>Johnny</UserName>
+        <index>2,5,3,4,1</index>
+      </User>
+    </Company>
+    <Company>
+      <CompanyName>UnionService</CompanyName>
+      <UserName>Jay-Z</UserName>
+      <UserName>Scofield</UserName>
+      <UserName>T-Bag</UserName>
+    </Company>
+  </Datagridview1_Config>
+  <Datagridview2_Config>
+    <Company>
+      <CompanyName>WYN2K</CompanyName>
+      <UserName>Nico</UserName>
+      <UserName>Wiki</UserName>
+      <UserName>Johnny</UserName>
+    </Company>
+    <Company>
+      <CompanyName>UnionService</CompanyName>
+      <UserName>Jay-Z</UserName>
+      <UserName>Scofield</UserName>
+      <UserName>T-Bag</UserName>
+    </Company>
+  </Datagridview2_Config>
+</Config>          
