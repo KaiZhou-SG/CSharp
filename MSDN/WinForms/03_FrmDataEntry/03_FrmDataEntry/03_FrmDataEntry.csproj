@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AA24D3F6-FEE2-49F8-88C3-98F05A036B3F}</ProjectGuid>
+    <ProjectGuid>{694125C8-3B39-45AD-A735-E0E18D5928C1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_02_FrmCalculator02</RootNamespace>
-    <AssemblyName>02_FrmCalculator02</AssemblyName>
+    <RootNamespace>_03_FrmDataEntry</RootNamespace>
+    <AssemblyName>03_FrmDataEntry</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="01_FrmCalculator00, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
