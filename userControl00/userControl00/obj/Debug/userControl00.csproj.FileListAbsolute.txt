@@ -1,0 +1,7 @@
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\bin\Debug\userControl00.dll
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\bin\Debug\userControl00.pdb
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\obj\Debug\userControl00.csprojResolveAssemblyReference.cache
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\obj\Debug\userControl00.btnNtxt.resources
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\obj\Debug\userControl00.csproj.GenerateResource.Cache
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\obj\Debug\userControl00.dll
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl00\userControl00\obj\Debug\userControl00.pdb

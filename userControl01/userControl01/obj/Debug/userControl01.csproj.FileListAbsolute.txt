@@ -1,0 +1,11 @@
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\bin\Debug\userControl01.exe.config
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\bin\Debug\userControl01.exe
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\bin\Debug\userControl01.pdb
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\bin\Debug\userControl00.dll
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\bin\Debug\userControl00.pdb
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.csprojResolveAssemblyReference.cache
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.Form1.resources
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.Properties.Resources.resources
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.csproj.GenerateResource.Cache
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.exe
+c:\users\kai.zhou.sg\documents\visual studio 2013\Projects\userControl01\userControl01\obj\Debug\userControl01.pdb
