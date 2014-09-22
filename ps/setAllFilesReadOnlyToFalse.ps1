@@ -27,7 +27,7 @@ Function Get-ScriptDirectory
 }
 
 $dirRoot = Get-ScriptDirectory  
-$lstItems = Get-ChildItem -Recurse | Where-Object {!$_.PSIsContainer}
+$lstItems = Get-ChildItem -Path $dirRoot -Recurse | Where-Object {!$_.PSIsContainer}
 
 foreach ($item in $lstItems)
 {
