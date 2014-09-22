@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ADB1EF50-2B14-4E10-B9CB-7BADDEAE8475}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{5276B5C7-40EF-4D17-B047-EA6DD5C1389B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_02_principle01</RootNamespace>
-    <AssemblyName>02_principle01</AssemblyName>
+    <RootNamespace>dgv00</RootNamespace>
+    <AssemblyName>dgv00</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,23 +38,47 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="baseclass\People.cs" />
-    <Compile Include="behavior\BossEarnMoney.cs" />
-    <Compile Include="behavior\BossFinanceReport.cs" />
-    <Compile Include="behavior\BossWork.cs" />
-    <Compile Include="behavior\iEarnMoney.cs" />
-    <Compile Include="behavior\iFinanceReport.cs" />
-    <Compile Include="behavior\iWork.cs" />
-    <Compile Include="behavior\ProgrammerEarnMoney.cs" />
-    <Compile Include="behavior\ProgrammerFinaceReport.cs" />
-    <Compile Include="behavior\ProgrammerWork.cs" />
-    <Compile Include="businessLogic\Programmer.cs" />
-    <Compile Include="helpers\Title.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs" />
+    <Compile Include="Grade.cs" />
+    <Compile Include="LstGrade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\Employee.datasource" />
+    <None Include="Properties\DataSources\Grade.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

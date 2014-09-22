@@ -86,5 +86,20 @@ namespace _02_principle01.baseclass
         {
             return earnMoney.earnMoney();
         }
+
+        public void SetWorkBehavior(iWork workBehavior)
+        {
+            this.work = workBehavior;
+        }
+
+        public void SetFinanceReportBehavior(iFinanceReport fReportBehavior)
+        {
+            this.report = fReportBehavior;
+        }
+
+        public void SetEarnMoneyBehavior(iEarnMoney earnMoney)
+        {
+            this.earnMoney = earnMoney;
+        }
     }
 }
