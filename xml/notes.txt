@@ -1,0 +1,110 @@
+1 XML is for storing as well as exchanging data, while HTML is for displaying
+  data through an user agent(e.g. Web Browser)
+2 XML separates data from html
+  2.1 If you need to update a website dynamically, it's easier to update the 
+    xml file instead, and html takes care of how data looks(but how?)
+3 XML is open, extensible, and platform / technology independent. It's industry
+  standard of the W3C, widely supported, even in other industries.
+4 Elements are the basic building blocks of an XML document
+  4.1 syntax: <element_name>text_data</element_name>
+  4.2 the element_name are user defined(extensible)
+  4.3 the element can have children elements
+  4.4 an element can contain text data, empty or other elements
+  4.5 an example of an empty element: <loss />, this is called as empty element
+    shorthand
+  4.6 element names are case sensitive
+5 Namespace
+  5.1 Since XML allows designers to choose thier own tag names, it is possible
+    two or more designers chose the same tag names. XML namespace solves this 
+	problem.
+  5.2 syntax:
+    <prefix:localname xmlns:prefix="namespace_uri"/>
+	<prefix:localname xmlns:prefix="namespace_uri"></prefix:localname>
+	<prefix:localname xmlns:prefix="namespace_uri">children</prefix:localname>
+  5.3 examples:
+    <?xml version="1.0"?>
+	<teacher1:tutorial xmlns:teacher="http://www.w3resource.com/teacher1">
+	  <tutorial>English</tutorial>
+	  <tutorial>English films</tutorial>
+	  <tutorial>English songs</tutorial>
+	  <other_element1></other_element1>
+	  <other_element2></other_element2>
+	  <other_element3></other_element3>
+	</teacher1:tutorial>
+	<teacher2:tutorial xmlns:teacher="http://www.w3resource.com/teacher2">
+	  <tutorial>Chinese</tutorial>
+	  <tutorial>Chinese films</tutorial>
+	  <tutorial>Chinese songs</tutorial>
+	  <other_element1></other_element1>
+	  <other_element2></other_element2>
+	  <other_element3></other_element3>
+	</teacher2:tutorial>
+  5.4 The namespace name and local name of the element together form a globally
+    unique name known as a qualified name.
+  5.5 Namespace declaration appear inside an element start and end tag are used
+    to map a namespace prefix.
+    5.5.1 Only one default namespace declaration may appear on an element.
+	5.5.2 Any number of non-default namespace declarations may appear on an
+	  element, but not useful.
+  5.6 The syntax for a namespace declaration is:
+    xmlns:prefix="uri"
+  5.7 THe syntax for a default namespace declaration is:
+    xmlns="uri"
+  5.8 All namespace declarations have a scope-that is, a set of elements to 
+    which they may apply.
+  5.9 A namespace declaration is in scope for the element on which it is 
+    declared and all of that element's descendants.
+  5.10 The in-scope mapping of a given prefix to a namespace name can be 
+    overridden by providing a new mapping for that prefix on a descendant 
+	element. And so does the in-scope default namespace.
+  5.11 QNames
+    The names of all elements in a document that conforms to the Namespaces in
+	the XML namespace specification.
+  5.12 NCNames
+    An NCName is name without a colon in it. Both local name and the prefix are
+	NCNames.
+  5.13 The namespace of an element with a given prefix is the namespace 
+    specified by the in-scope namespace declaration for that prefix.
+    It's an error if no such namespace declaration is in scope.
+  5.14 The namespace of un-prefixed elements is the the namespace specified by
+    the in-scope default namespace declaration, if any.
+	If no, then such elements are not in any namespace, and they're called the
+	unqualified elements.
+  5.15 The namespace of the unqualified elements is the empty string '', so if
+    default namespace is in scope and an unqualified element is required, the 
+	default namespace declaration can be masked by providing a namespace decla-
+	ration of the form xlmns='' on the element.
+6 Attribute
+  6.1 Any attribute value must consist of one of the following types of attributes
+    available to an XML document:
+	CDATA
+	ENTITY
+	Enumeration
+	ID
+	IDREF
+	IDREFS
+	NMTOKEN
+	NMTOKENS
+	NOTATION
+  6.2 Attribute and namespace
+    6.2.1 Attribute names are QNames, means it also has namespace.
+	6.2.2 The namespace of an attribute with a given prefix is the namespace
+	  specified by the in-scope declaration for that prefix.
+	6.2.3 It's an error if no such namespace declaration in scope.
+	6.2.4 Unprefixed attributes are not in any namespace even if a default 
+	  namespace declaration is in the scope.
+	6.2.5 Attributes are required to be prefixed by a namespace to remain 
+	  unique in an XML document reference.
+
+
+	
+  
+  
+	
+
+  
+  
+  
+	
+	
+	
