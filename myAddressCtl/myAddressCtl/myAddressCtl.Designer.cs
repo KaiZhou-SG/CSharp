@@ -59,6 +59,7 @@
             this.cboCode.Name = "cboCode";
             this.cboCode.Size = new System.Drawing.Size(121, 21);
             this.cboCode.TabIndex = 1;
+            this.cboCode.TextChanged += new System.EventHandler(this.cboCode_TextChanged);
             // 
             // tbxName
             // 
@@ -66,6 +67,7 @@
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(145, 20);
             this.tbxName.TabIndex = 2;
+            this.tbxName.TextChanged += new System.EventHandler(this.tbxName_TextChanged);
             // 
             // label2
             // 
@@ -82,6 +84,7 @@
             this.tbxAdr1.Name = "tbxAdr1";
             this.tbxAdr1.Size = new System.Drawing.Size(291, 20);
             this.tbxAdr1.TabIndex = 2;
+            this.tbxAdr1.TextChanged += new System.EventHandler(this.tbxAdr1_TextChanged);
             // 
             // label3
             // 
@@ -98,6 +101,7 @@
             this.tbxAdr2.Name = "tbxAdr2";
             this.tbxAdr2.Size = new System.Drawing.Size(291, 20);
             this.tbxAdr2.TabIndex = 2;
+            this.tbxAdr2.TextChanged += new System.EventHandler(this.tbxAdr2_TextChanged);
             // 
             // label4
             // 
@@ -114,6 +118,7 @@
             this.tbxAdr3.Name = "tbxAdr3";
             this.tbxAdr3.Size = new System.Drawing.Size(291, 20);
             this.tbxAdr3.TabIndex = 2;
+            this.tbxAdr3.TextChanged += new System.EventHandler(this.tbxAdr3_TextChanged);
             // 
             // label5
             // 
@@ -130,6 +135,7 @@
             this.tbxAdr4.Name = "tbxAdr4";
             this.tbxAdr4.Size = new System.Drawing.Size(291, 20);
             this.tbxAdr4.TabIndex = 2;
+            this.tbxAdr4.TextChanged += new System.EventHandler(this.tbxAdr4_TextChanged);
             // 
             // label6
             // 
@@ -146,6 +152,7 @@
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.Size = new System.Drawing.Size(291, 20);
             this.tbxCity.TabIndex = 2;
+            this.tbxCity.TextChanged += new System.EventHandler(this.tbxCity_TextChanged);
             // 
             // myAddressCtl
             // 
