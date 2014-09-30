@@ -106,5 +106,10 @@ namespace myStopsCtrl
             bdsStops.DataSource = lstCustomerDTOs;
             myStopsCtrl1.BdsStops = bdsStops;
         }
+
+        private void myStopsCtrl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

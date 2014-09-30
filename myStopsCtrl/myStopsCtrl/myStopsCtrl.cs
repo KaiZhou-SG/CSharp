@@ -13,6 +13,7 @@ namespace myStopsCtrl
 {
     public partial class myStopsCtrl : UserControl
     {
+        private CustomerDTO tmpStop; // store a stop temporarily
         private BindingSource bdsStops;
         public BindingSource BdsStops
         {
@@ -74,9 +75,10 @@ namespace myStopsCtrl
 
         private bool Add(CustomerDTO stop)
         {
-            //FrmStop frmStop = new FrmStop(lstStops, )
-            //frmStop.ShowDialog();
+            FrmStop frmStop = new FrmStop(bdsStops, tmpStop);
+            frmStop.ShowDialog();
 
+            bdsStops.Add(tmpStop);
             return false;
         }
 
@@ -87,7 +89,7 @@ namespace myStopsCtrl
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            Add(tmpStop);
         }
 
         private void btnDel_Click(object sender, EventArgs e)

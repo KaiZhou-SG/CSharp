@@ -39,6 +39,7 @@
             this.myStopsCtrl1.Name = "myStopsCtrl1";
             this.myStopsCtrl1.Size = new System.Drawing.Size(875, 401);
             this.myStopsCtrl1.TabIndex = 0;
+            this.myStopsCtrl1.Load += new System.EventHandler(this.myStopsCtrl1_Load);
             // 
             // btnInitialize
             // 

@@ -15,35 +15,37 @@ namespace myStopsCtrl
     {
         private CustomerDTO stop;
 
-        public FrmStop(List<CustomerDTO> lstStops, 
+        public FrmStop(BindingSource bdsStops, 
             CustomerDTO outSelectedStop)
         {
             InitializeComponent();
 
-            BindingSource bdsStops = new BindingSource();
             stop = outSelectedStop;
-            bdsStops.DataSource = lstStops;
             myStop.BdsAddress = bdsStops;
 
-        }
-
-        private void btnOK_Clicked(object sender,
-            EventArgs e)
-        {
-            stop = myStop.Current;
-
-        }
-
-        private void btnCancel_Clicked(object sender,
-            EventArgs e)
-        {
-            this.Close();
-            this.Dispose();
         }
 
         public CustomerDTO GetStop()
         {
             return this.stop;
+        }
+
+        private void btnOK_Click(object sender,
+            EventArgs e)
+        {
+            stop = myStop.Current;
+
+            this.Close();
+            this.Dispose();
+        }
+
+        private void btnCancel_Click(object sender, 
+            EventArgs e)
+        {
+            stop = null;
+
+            this.Close();
+            this.Dispose();
         }
 
     }
