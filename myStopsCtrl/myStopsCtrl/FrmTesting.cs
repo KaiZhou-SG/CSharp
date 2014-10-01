@@ -105,6 +105,13 @@ namespace myStopsCtrl
             BindingSource bdsStops = new BindingSource();
             bdsStops.DataSource = lstCustomerDTOs;
             myStopsCtrl1.BdsStops = bdsStops;
+
+            BindingSource bdsAllStops = new BindingSource();
+            string[] args = { "ipl", "ZhouKai\\Sql2012", "FM80_VN_JPTPAC_SGN_LIVE" };
+            FM.FMSystem.DAL.FMGlobalSettings.TheInstance.SetConnectionString(args);
+            List<CustomerDTO> lstAllStops = CustomerDTO.GetAllCustomers();
+            bdsAllStops.DataSource = lstAllStops;
+            myStopsCtrl1.bdsAllStops = bdsAllStops;
         }
 
         private void myStopsCtrl1_Load(object sender, EventArgs e)

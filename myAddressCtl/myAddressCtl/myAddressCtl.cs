@@ -17,12 +17,12 @@ namespace myAddressCtl
     /// handlers.
     /// The key point to avoid dead loop of event 
     /// handlers is: 
-    /// (1) do only one thing in a function, or say 
+    /// (1) do only one thing in one function, or say 
     /// implement only one logic in a function. 
     /// (2) make sure the data flow is only one way 
     /// flow. For example, one possible data flow is:
     /// user input --> control.Text property 
-    /// --> public property represent the control.Text
+    ///-->public property representing the control.Text
     /// property.
     /// You can't then add another dataflow:
     /// such as set public property in order to set the 
@@ -190,7 +190,75 @@ namespace myAddressCtl
         }
         // end of control logic
 
+        public virtual void AutoCompleteComboBox(object sender, KeyPressEventArgs e, bool blnLimitToList)
+        {
+            ComboBox cb = (ComboBox)sender;
+            cb.DropDownStyle = ComboBoxStyle.DropDown;
+            cb.DroppedDown = true;
+            string strFindStr = "";
+            if (e.KeyChar == (char)8)
+            {
+                if (cb.SelectionStart <= 1)
+                {
+                    cb.Text = "";
+                    return;
+                }
+
+                if (cb.SelectionLength == 0)
+                    strFindStr = cb.Text.Substring(0, cb.Text.Length - 1);
+                else
+                    strFindStr = cb.Text.Substring(0, cb.SelectionStart - 1);
+            }
+            else
+            {
+                if (e.KeyChar == '\r')
+                    return;
+
+                if (cb.SelectionLength == 0)
+                    strFindStr = cb.Text + e.KeyChar;
+                else
+                    strFindStr = cb.Text.Substring(0, cb.SelectionStart) + e.KeyChar;
+            }
+
+            int intIdx = -1;
+
+            // Search the string in the ComboBox list.
+
+            intIdx = cb.FindString(strFindStr);
+
+            if (intIdx != -1)
+            {
+                cb.SelectedText = "";
+                cb.SelectedIndex = intIdx;
+                cb.SelectionStart = strFindStr.Length;
+                cb.SelectionLength = cb.Text.Length;
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = blnLimitToList;
+            }
+        }
+
         #endregion 
+
+        private void cboCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                ComboBox cbo = (ComboBox)sender;
+                if (e.KeyChar == '\n')
+                    return;
+                else
+                {
+                    cbo.DroppedDown = true;
+                    AutoCompleteComboBox(sender, e, true);
+                    //if (cbo.Text == "")
+                    //    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Data error"); }
+        }
 
     }
 }

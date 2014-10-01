@@ -60,12 +60,13 @@
             this.cboCode.Size = new System.Drawing.Size(121, 21);
             this.cboCode.TabIndex = 1;
             this.cboCode.TextChanged += new System.EventHandler(this.cboCode_TextChanged);
+            this.cboCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCode_KeyPress);
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(208, 3);
+            this.tbxName.Location = new System.Drawing.Point(189, 3);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(145, 20);
+            this.tbxName.Size = new System.Drawing.Size(164, 20);
             this.tbxName.TabIndex = 2;
             this.tbxName.TextChanged += new System.EventHandler(this.tbxName_TextChanged);
             // 

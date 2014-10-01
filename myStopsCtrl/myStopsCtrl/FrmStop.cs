@@ -14,29 +14,25 @@ namespace myStopsCtrl
     public partial class FrmStop : Form
     {
         private CustomerDTO stop;
+        public CustomerDTO GetSelectedStop() { return stop;}
 
-        public FrmStop(BindingSource bdsStops, 
-            CustomerDTO outSelectedStop)
+        public FrmStop(BindingSource bdsStops)
         {
             InitializeComponent();
 
-            stop = outSelectedStop;
             myStop.BdsAddress = bdsStops;
 
-        }
-
-        public CustomerDTO GetStop()
-        {
-            return this.stop;
         }
 
         private void btnOK_Click(object sender,
             EventArgs e)
         {
             stop = myStop.Current;
-
+            
+            // this.Hide();
             this.Close();
-            this.Dispose();
+            // this.Dispose();
+        
         }
 
         private void btnCancel_Click(object sender, 

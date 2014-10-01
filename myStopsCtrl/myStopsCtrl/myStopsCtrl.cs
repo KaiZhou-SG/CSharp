@@ -13,7 +13,8 @@ namespace myStopsCtrl
 {
     public partial class myStopsCtrl : UserControl
     {
-        private CustomerDTO tmpStop; // store a stop temporarily
+        // store a stop temporarily
+        private CustomerDTO tmpStop; 
         private BindingSource bdsStops;
         public BindingSource BdsStops
         {
@@ -24,7 +25,10 @@ namespace myStopsCtrl
                 dgvStops.DataSource = bdsStops;
             }
         }
-
+        // bdsAllStops will be initialized only when the
+        //  user clicks Add, and will be initialized only 
+        // once
+        public BindingSource bdsAllStops;
         public myStopsCtrl()
         {
             InitializeComponent();
@@ -75,10 +79,23 @@ namespace myStopsCtrl
 
         private bool Add(CustomerDTO stop)
         {
-            FrmStop frmStop = new FrmStop(bdsStops, tmpStop);
-            frmStop.ShowDialog();
+            // initialize only once
+            if (bdsAllStops == null)
+            {
+                throw new Exception(
+                    "Please provide all possible stops for"
+                + " the user to choose from");
+            }
 
-            bdsStops.Add(tmpStop);
+            FrmStop frmStop = new FrmStop(bdsAllStops);
+            frmStop.ShowDialog();
+            tmpStop = frmStop.GetSelectedStop();
+
+            // only add when the user selected a valid stop
+            if (tmpStop != null) { bdsStops.Add(tmpStop); }
+            frmStop.Close();
+            frmStop.Dispose();
+
             return false;
         }
 
@@ -94,7 +111,12 @@ namespace myStopsCtrl
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-
+            if (dgvStops.SelectedRows.Count == 1)
+            {
+                int index = dgvStops.SelectedRows[0].Index;
+                Delete(index);
+                BdsStops = new BindingSource(){DataSource = bdsStops};
+            }
         }
 
         private void btnUp_Click(object sender, EventArgs e)
