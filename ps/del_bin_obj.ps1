@@ -31,9 +31,11 @@ $lstItems = Get-ChildItem -Path $dirCurrent -Recurse |
 
 foreach ($dirSubDir in $lstItems)
 {
-  if ($dirSubDir -eq 'bin' -or
-      $dirSubDir -eq 'obj') 
+  $dirSubDir.Name
+  if ($dirSubDir.Name -eq 'bin' -or
+      $dirSubDir.Name -eq 'obj') 
   {
+    $dirSubDir
     rd -Recurse $dirSubDir
   }
 }

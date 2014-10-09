@@ -113,25 +113,19 @@ namespace myAddressCtl
         #endregion
 
         #region "Event handlers"
-        public event EventHandler OnInitializeCodes;
         public event EventHandler OnCodeChanged;
 
         private void cboCode_TextChanged(
             object sender, EventArgs e)
         {
-            // the client assign an event handler to this event
-            // via assign a function to the delegate below:
+            // perform control consumer's logic
             if (OnCodeChanged != null)
             {
-                // the client has assigned function to this 
-                // event
                OnCodeChanged(this, EventArgs.Empty);
             }
             else
             {
-                // the client hasn't assign a function to this 
-                // event.
-                // perform default logic
+                // perform control's own default logic
                 CodeChanged(sender, e);
             }
             
@@ -240,8 +234,6 @@ namespace myAddressCtl
             }
         }
 
-        #endregion 
-
         private void cboCode_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -259,6 +251,8 @@ namespace myAddressCtl
             }
             catch (Exception ex) { MessageBox.Show("Data error"); }
         }
+
+        #endregion 
 
     }
 }
