@@ -11,7 +11,7 @@ using FM.FMSystem.BLL;
 
 namespace myStopsCtrl
 {
-    public partial class FrmStop : Form
+    internal partial class FrmStop : Form
     {
         private CustomerDTO stop;
         public CustomerDTO GetSelectedStop() { return stop;}
