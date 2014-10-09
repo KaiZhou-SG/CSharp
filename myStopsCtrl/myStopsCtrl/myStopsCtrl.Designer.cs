@@ -68,8 +68,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(875, 401);
-            this.splitContainer1.SplitterDistance = 750;
+            this.splitContainer1.Size = new System.Drawing.Size(843, 254);
+            this.splitContainer1.SplitterDistance = 722;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvStops
@@ -91,7 +91,7 @@
             this.dgvStops.Location = new System.Drawing.Point(0, 0);
             this.dgvStops.Name = "dgvStops";
             this.dgvStops.ReadOnly = true;
-            this.dgvStops.Size = new System.Drawing.Size(750, 401);
+            this.dgvStops.Size = new System.Drawing.Size(722, 254);
             this.dgvStops.TabIndex = 0;
             this.dgvStops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStops_CellClick);
             this.dgvStops.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStops_RowHeaderMouseClick);
@@ -171,7 +171,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(121, 401);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(117, 254);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnAdd
@@ -179,7 +179,7 @@
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 44);
+            this.btnAdd.Size = new System.Drawing.Size(111, 25);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -188,9 +188,9 @@
             // btnDel
             // 
             this.btnDel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDel.Location = new System.Drawing.Point(3, 53);
+            this.btnDel.Location = new System.Drawing.Point(3, 34);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(115, 44);
+            this.btnDel.Size = new System.Drawing.Size(111, 25);
             this.btnDel.TabIndex = 0;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -199,9 +199,9 @@
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(3, 353);
+            this.btnCancel.Location = new System.Drawing.Point(3, 220);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(115, 45);
+            this.btnCancel.Size = new System.Drawing.Size(111, 31);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -210,9 +210,9 @@
             // btnOK
             // 
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOK.Location = new System.Drawing.Point(3, 303);
+            this.btnOK.Location = new System.Drawing.Point(3, 189);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(115, 44);
+            this.btnOK.Size = new System.Drawing.Size(111, 25);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -221,9 +221,9 @@
             // btnDown
             // 
             this.btnDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDown.Location = new System.Drawing.Point(3, 203);
+            this.btnDown.Location = new System.Drawing.Point(3, 127);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(115, 44);
+            this.btnDown.Size = new System.Drawing.Size(111, 25);
             this.btnDown.TabIndex = 0;
             this.btnDown.Text = "Move Down";
             this.btnDown.UseVisualStyleBackColor = true;
@@ -232,9 +232,9 @@
             // btnUp
             // 
             this.btnUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUp.Location = new System.Drawing.Point(3, 153);
+            this.btnUp.Location = new System.Drawing.Point(3, 96);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(115, 44);
+            this.btnUp.Size = new System.Drawing.Size(111, 25);
             this.btnUp.TabIndex = 0;
             this.btnUp.Text = "Move Up";
             this.btnUp.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "myStopsCtrl";
-            this.Size = new System.Drawing.Size(875, 401);
+            this.Size = new System.Drawing.Size(843, 254);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

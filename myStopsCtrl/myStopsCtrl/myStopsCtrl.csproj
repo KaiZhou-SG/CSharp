@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5E1EDEC1-AAB4-4C2F-AA1C-208BF45F608A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>myStopsCtrl</RootNamespace>
     <AssemblyName>myStopsCtrl</AssemblyName>
@@ -58,12 +58,6 @@
     <Compile Include="FrmStop.Designer.cs">
       <DependentUpon>FrmStop.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTesting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTesting.Designer.cs">
-      <DependentUpon>FrmTesting.cs</DependentUpon>
-    </Compile>
     <Compile Include="myStopsCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,9 +69,6 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmStop.resx">
       <DependentUpon>FrmStop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTesting.resx">
-      <DependentUpon>FrmTesting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myStopsCtrl.resx">
       <DependentUpon>myStopsCtrl.cs</DependentUpon>
