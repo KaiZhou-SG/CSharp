@@ -33,6 +33,7 @@ namespace myStopsCtrl
         {
             InitializeComponent();
         }
+        public EventHandler On_OK_Clicked;
 
         private bool MoveUp(int index)
         {
@@ -101,7 +102,12 @@ namespace myStopsCtrl
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // this.Hide();
+            if (On_OK_Clicked != null)
+            {
+                // the user plug in logic
+                On_OK_Clicked(this, EventArgs.Empty);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
