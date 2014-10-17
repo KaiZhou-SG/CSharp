@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvStops = new System.Windows.Forms.DataGridView();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -46,6 +39,13 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
+            this.stopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDTOBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stopBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -80,13 +81,12 @@
             this.dgvStops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStops.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.address1DataGridViewTextBoxColumn,
-            this.address2DataGridViewTextBoxColumn,
-            this.address3DataGridViewTextBoxColumn,
-            this.address4DataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn});
-            this.dgvStops.DataSource = this.customerDTOBindingSource;
+            this.Description,
+            this.Address1,
+            this.Address2,
+            this.Address3,
+            this.Address4});
+            this.dgvStops.DataSource = this.stopBindingSource;
             this.dgvStops.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStops.Location = new System.Drawing.Point(0, 0);
             this.dgvStops.Name = "dgvStops";
@@ -95,55 +95,6 @@
             this.dgvStops.TabIndex = 0;
             this.dgvStops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStops_CellClick);
             this.dgvStops.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStops_RowHeaderMouseClick);
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // address1DataGridViewTextBoxColumn
-            // 
-            this.address1DataGridViewTextBoxColumn.DataPropertyName = "address1";
-            this.address1DataGridViewTextBoxColumn.HeaderText = "address1";
-            this.address1DataGridViewTextBoxColumn.Name = "address1DataGridViewTextBoxColumn";
-            this.address1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // address2DataGridViewTextBoxColumn
-            // 
-            this.address2DataGridViewTextBoxColumn.DataPropertyName = "address2";
-            this.address2DataGridViewTextBoxColumn.HeaderText = "address2";
-            this.address2DataGridViewTextBoxColumn.Name = "address2DataGridViewTextBoxColumn";
-            this.address2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // address3DataGridViewTextBoxColumn
-            // 
-            this.address3DataGridViewTextBoxColumn.DataPropertyName = "address3";
-            this.address3DataGridViewTextBoxColumn.HeaderText = "address3";
-            this.address3DataGridViewTextBoxColumn.Name = "address3DataGridViewTextBoxColumn";
-            this.address3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // address4DataGridViewTextBoxColumn
-            // 
-            this.address4DataGridViewTextBoxColumn.DataPropertyName = "address4";
-            this.address4DataGridViewTextBoxColumn.HeaderText = "address4";
-            this.address4DataGridViewTextBoxColumn.Name = "address4DataGridViewTextBoxColumn";
-            this.address4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "city";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "city";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerDTOBindingSource
             // 
@@ -240,12 +191,58 @@
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
-            // myStopsCtrl
+            // stopBindingSource
+            // 
+            this.stopBindingSource.DataSource = typeof(FM.TransportMaintenanceDLL.BLL.Stop);
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Name";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Address1
+            // 
+            this.Address1.DataPropertyName = "Address1";
+            this.Address1.HeaderText = "Address1";
+            this.Address1.Name = "Address1";
+            this.Address1.ReadOnly = true;
+            // 
+            // Address2
+            // 
+            this.Address2.DataPropertyName = "Address2";
+            this.Address2.HeaderText = "Address2";
+            this.Address2.Name = "Address2";
+            this.Address2.ReadOnly = true;
+            // 
+            // Address3
+            // 
+            this.Address3.DataPropertyName = "Address3";
+            this.Address3.HeaderText = "Address3";
+            this.Address3.Name = "Address3";
+            this.Address3.ReadOnly = true;
+            // 
+            // Address4
+            // 
+            this.Address4.DataPropertyName = "Address4";
+            this.Address4.HeaderText = "Address4";
+            this.Address4.Name = "Address4";
+            this.Address4.ReadOnly = true;
+            // 
+            // myStopChainCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "myStopsCtrl";
+            this.Name = "myStopChainCtrl";
             this.Size = new System.Drawing.Size(843, 254);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -254,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDTOBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stopBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,13 +267,13 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource customerDTOBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address4;
+        private System.Windows.Forms.BindingSource stopBindingSource;
     }
 }

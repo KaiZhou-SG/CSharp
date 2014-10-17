@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\FM.FMSystem.BLL.CustomerDTO.datasource" />
+    <None Include="Properties\DataSources\FM.TransportMaintenanceDLL.BLL.Stop.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
