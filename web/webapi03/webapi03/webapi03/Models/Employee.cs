@@ -142,7 +142,8 @@ namespace webapi02.Models
                         count++;
                         e = GetEmployeeFromDBReader(reader);
                     }
-                    if (count > 1) throw new Exception("Duplicated employee id.");
+                    // allow more than 1 entities with the same first name
+                    // if (count > 1) throw new Exception("Duplicated employee id.");
                 }
                 catch (SqlException se) { throw new Exception(se.Message); }
             }

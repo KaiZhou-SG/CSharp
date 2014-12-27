@@ -8,6 +8,7 @@ using System.Web.Http;
 // which a web api does not have
 using System.Web.Mvc;
 
+
 namespace webapi03.Controllers
 {
     // public class HomeController : ApiController
@@ -18,7 +19,8 @@ namespace webapi03.Controllers
         // Index.cshtml as the view(welcome page)
         public ActionResult Index()
         {
-            return View();
+            return View("../Home");
         }
+
     }
 }

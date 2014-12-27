@@ -18,12 +18,23 @@ namespace webapi02.Controllers
         }
 
         // GET api/<controller>/5
-        public Employee Get(int id)
+        [ActionName("GetEmployeeById")]
+        public Employee GetEmployeeById(String id)
         {
-            return new Employee().GetEmployeeById(id);
+            int nId = 0;
+            if (Int32.TryParse(id, out nId))
+            {
+                return new Employee().GetEmployeeById(nId);
+            }
+            else
+            {
+                // invalid input
+                throw new Exception("Invalid employee id");
+            }
         }
 
         // GET api/<controller>/Zhou
+        [ActionName("GetEmployeeByFirstName")]
         public Employee GetEmployeeByFirstName(String firstName)
         {
             return new Employee().GetEmployeeByFirstName(firstName);

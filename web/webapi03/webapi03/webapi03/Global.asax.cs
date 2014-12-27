@@ -26,6 +26,8 @@ namespace webapi03
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             // zk: Configure / add routes to the RouteTable
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // zk: enable mapping by attributes
+            GlobalConfiguration.Configuration.MapHttpAttributeRoutes();
         }
     }
 }
