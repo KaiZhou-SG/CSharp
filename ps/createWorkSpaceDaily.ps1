@@ -57,10 +57,10 @@ Explorer.exe $workSpaceFullName
 Explorer.exe ~
 Explorer.exe C:\FreightMaster80\
 # execute firefox internet browser.
-Start "C:\Program Files (x86)\Mozilla Firefox\Firefox.exe"
-
+Start "c:\cygwin64\home\support\bin\chrome-win32\chrome.exe"
 # Adds some useful variables: $dirFMCompiledCodes, $dirWorkLog
-Start "Powershell"
-$dirFMCompiledCodes = 'C:\FreightMaster80\Standard\Transport85\CompiledCode'
+# 2015-01-09 Zhou Kai comments the one line below, to prevent the powershell program from execute
+# Start "Powershell"
+$dirFMCompiledCodes = 'C:\FreightMaster80\Standard\Transport87\CompiledCode'
 $dirWorkLog = 'd:\workLog'
 $dirGitDoc = 'C:\Users\support\Documents\doc\'
