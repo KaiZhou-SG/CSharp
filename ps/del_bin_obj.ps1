@@ -36,7 +36,7 @@ foreach ($dirSubDir in $lstItems)
       $dirSubDir.Name -eq 'obj') 
   {
     $dirSubDir
-    rd -Recurse $dirSubDir
+    rd -Recurse $dirSubDir.FullName
   }
 }
   
